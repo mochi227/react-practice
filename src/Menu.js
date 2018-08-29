@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from 'react-helmet';
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import BlogList from "./BlogList";
 import Blog from "./Blog";
@@ -6,7 +7,13 @@ import NotFound from "./NotFound";
 import Contact from "./Contact";
 
 const topPage = () => <div><h1>Top Page</h1><p>ここがトップページです</p></div>;
-const page1 = () => <div><h1>Page1</h1><p>ここがページ1です</p></div>;
+const page1 = () => <div>
+<Helmet title="page1"
+  meta={[
+    { property: 'og:title', content: 'page1' },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:description', content: 'ページ1です' },
+  ]} /><h1>Page1</h1><p>ここがページ1です</p></div>;
 const page2 = () => <div><h1>Page2</h1><p>ここがページ2です</p></div>;
 const page3 = () => <div><h1>Page3</h1><p>ここがページ3です</p></div>;
 const page404 = () => <div><h1>404</h1><p>存在しないページです</p></div>;
