@@ -7,7 +7,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Helmet title="default" />
+        <Helmet title="default" meta={[
+    { property: 'og:title', content: 'defaultTitle' },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:description', content: 'デフォルトだよ' },
+  ]} />
         <Menu />
       </div>
     );
