@@ -42,7 +42,7 @@ class BlogList extends Component {
         <div>
           <Helmet title="BlogList"
             meta={[
-              { property: 'og:title', content: 'BlogList' },
+              { property: 'og:title', content: 'Blogs' },
               { property: 'og:type', content: 'website' },
               { property: 'og:description', content: 'ブログ一覧' },
             ]} />
