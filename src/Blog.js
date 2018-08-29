@@ -13,16 +13,8 @@ class Blog extends Component {
   }
 
   loadBlog() {
-    // const blog = this.props.location.state.blog;
-    // console.log(this.props.location.state);
-    // this.setState({
-    //   title: blog.attributes.title,
-    // })
     console.log(this.props);
     const params = this.props.match.params;
-    // const params = {
-    //   nid: '3',
-    // };
     const fetchUrl = 'https://react.dev.studio-umi.jp/article/' + params.nid;
     fetch(fetchUrl, {
       mode: 'cors',
