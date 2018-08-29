@@ -17,11 +17,18 @@ const page1 = () => <div>
 const page2 = () => <div><h1>Page2</h1><p>ここがページ2です</p></div>;
 const page3 = () => <div><h1>Page3</h1><p>ここがページ3です</p></div>;
 const page404 = () => <div><h1>404</h1><p>存在しないページです</p></div>;
-const Menu = () => {
+const Menu = (props) => {
   const liStyle = {
     display: 'inline',
     width: '100px',
   };
+
+  const blogs = props.blogs;
+  const blogRoutes = blogs.map((blog) => {
+    const attributes = blog.attributes;
+    const href = "/blog/" + attributes.nid;
+    return <Route exact path={href} component={Blog} />
+  });
 
   return (
     <Router>
@@ -43,6 +50,7 @@ const Menu = () => {
             <Route path='/blog/:nid' exact component={Blog} />
             <Route path='/contact' exact component={Contact} />
             <Route exact component={NotFound} />
+            {blogRoutes}
           </Switch>
         </div>
       </div>
