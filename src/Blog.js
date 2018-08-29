@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import NotFound from "./NotFound";
 
 class Blog extends Component {
@@ -45,6 +46,12 @@ class Blog extends Component {
     }
     return (
       <article>
+        <Helmet title={this.state.title}
+          meta={[
+            { property: 'og:title', content: this.state.title },
+            { property: 'og:type', content: 'article' },
+            { property: 'og:description', content: this.state.body },
+          ]} />
         <h1>{this.state.title}</h1>
         <div>{this.state.body}</div>
       </article>

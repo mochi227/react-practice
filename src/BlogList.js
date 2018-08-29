@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import {Link} from "react-router-dom";
 
 class BlogList extends Component {
@@ -39,6 +40,12 @@ class BlogList extends Component {
     });
     return (
         <div>
+          <Helmet title="BlogList"
+            meta={[
+              { property: 'og:title', content: 'BlogList' },
+              { property: 'og:type', content: 'website' },
+              { property: 'og:description', content: 'ブログ一覧' },
+            ]} />
           <ul className="bloglist">
             {blogs}
           </ul>
