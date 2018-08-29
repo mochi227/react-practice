@@ -32,7 +32,7 @@ const Menu = () => {
             <Route path='/page1' exact component={page1}/>
             <Route path='/page2' exact component={page2}/>
             <Route path='/page3' exact component={page3}/>
-            <Route path='/blog' exact render={() => <BlogList url="http://react.php71/jsonapi/node/article"/>}/>
+            <Route path='/blog' exact render={() => <BlogList url="https://react.dev.studio-umi.jp/jsonapi/node/article"/>}/>
             <Route path='/blog/:nid' exact component={Blog} />
             <Route path='/contact' exact component={Contact} />
             <Route exact component={NotFound} />

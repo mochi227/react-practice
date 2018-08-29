@@ -23,7 +23,7 @@ class Blog extends Component {
     // const params = {
     //   nid: '3',
     // };
-    const fetchUrl = 'http://react.php71/article/' + params.nid;
+    const fetchUrl = 'https://react.dev.studio-umi.jp/article/' + params.nid;
     fetch(fetchUrl, {
       mode: 'cors',
     }).then(function(response) {
